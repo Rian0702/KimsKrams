@@ -13,5 +13,6 @@ export default gql`
   type Fields {
     title: String
     body: String
+    heroImage: Image
   }
 `;

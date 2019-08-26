@@ -1,13 +1,23 @@
 var contentful = require("contentful");
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 const client = contentful.createClient({
-  space: "z16bxyuntl3a",
-  accessToken:
-    "e24d935a89f62eb4e375e7d320388372a5ae9f6b7928255958b7739993ff2cbf"
+  space: "bltc5ksbsy0r",
+  accessToken: "6N5GE2YALxcBN3FcQMlqQl3m6o9BvsCiuIiWeL_IhjM"
 });
 
-export const getEntry = async () => {
-  const test = await client.getEntry("3K9b0esdy0q0yGqgW2g6Ke");
+export const getReceipt = async id => {
+  const test = await client.getEntry(id).then(entry => {
+    const rawRichTextField = entry.fields.instruction;
+    const instructionText = documentToHtmlString(rawRichTextField);
+    return {
+      ...entry,
+      fields: {
+        ...entry.fields,
+        instructionText
+      }
+    };
+  });
   console.log("test", test);
-  return client.getEntry("3K9b0esdy0q0yGqgW2g6Ke");
+  return test;
 };
