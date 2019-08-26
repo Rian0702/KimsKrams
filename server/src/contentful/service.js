@@ -7,7 +7,7 @@ const client = contentful.createClient({
 });
 
 export const getReceipt = async id => {
-  const test = await client.getEntry(id).then(entry => {
+  const receipt = await client.getEntry(id).then(entry => {
     const rawRichTextField = entry.fields.instruction;
     const instructionText = documentToHtmlString(rawRichTextField);
     return {
@@ -18,6 +18,25 @@ export const getReceipt = async id => {
       }
     };
   });
-  console.log("test", test);
-  return test;
+  return receipt;
+};
+
+export const getReceipts = async () => {
+  const receipts = await client
+    .getEntries({
+      content_type: "recipe"
+    })
+    .then(entries => {
+      console.log("ent", entries.items);
+      return entries.items.map(entry => {
+        return {
+          ...entry,
+          fields: {
+            ...entry.fields,
+            instructionText: documentToHtmlString(entry.fields.instruction)
+          }
+        };
+      });
+    });
+  return receipts;
 };
