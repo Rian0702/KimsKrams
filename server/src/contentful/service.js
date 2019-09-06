@@ -21,6 +21,36 @@ export const getReceipt = async id => {
   return receipt;
 };
 
+export const getPage = async id => {
+  const page = await client.getEntry(id).then(entry => {
+    const rawRichTextField = entry.fields.body;
+    const bodyText = documentToHtmlString(rawRichTextField);
+    return {
+      ...entry,
+      fields: {
+        ...entry.fields,
+        bodyText
+      }
+    };
+  });
+  return page;
+};
+
+export const getStartPage = async () => {
+  const page = await client.getEntry("5VMLbLH50Q88ewaE6Lmfw0").then(entry => {
+    const rawRichTextField = entry.fields.body;
+    const bodyText = documentToHtmlString(rawRichTextField);
+    return {
+      ...entry,
+      fields: {
+        ...entry.fields,
+        bodyText
+      }
+    };
+  });
+  return page;
+};
+
 export const getReceipts = async () => {
   const receipts = await client
     .getEntries({

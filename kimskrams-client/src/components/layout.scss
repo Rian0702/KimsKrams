@@ -3,3 +3,7 @@
 $md-primary-color: $md-cyan-300; //optional colors
 $md-secondary-color: $md-purple-a-400; //optional colors
 @include react-md-everything; // Required
+
+body {
+  background-color: #f3e5d7;
+}

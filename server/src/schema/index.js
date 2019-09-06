@@ -5,7 +5,7 @@ import messageSchema from "./message";
 import imageSchema from "./image";
 import receiptSchema from "./receipt";
 import fileSchema from "./file";
-import entrySchema from "./entry";
+import pageSchema from "./page";
 
 const linkSchema = gql`
   type Query {
@@ -27,6 +27,6 @@ export default [
   messageSchema,
   imageSchema,
   receiptSchema,
-  entrySchema,
-  fileSchema
+  fileSchema,
+  pageSchema
 ];
