@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
     title: `Kims Krams`,
-    logo: 
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -12,7 +11,18 @@ module.exports = {
         // This type will contain remote schema Query type
         typeName: "receipt",
         // This is the field under which it's accessible
-        fieldName: "contenful",
+        fieldName: "receipts",
+        // URL to query from
+        url: "http://localhost:8000/graphql",
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "page",
+        // This is the field under which it's accessible
+        fieldName: "pages",
         // URL to query from
         url: "http://localhost:8000/graphql",
       },

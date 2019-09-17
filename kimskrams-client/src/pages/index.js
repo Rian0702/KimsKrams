@@ -3,22 +3,43 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
+import TypoBox from "../components/typo-box"
 import SEO from "../components/seo"
+import { useStaticQuery, graphql } from "gatsby"
 
-import { Button, FontIcon } from "react-md"
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      pages {
+        startPage {
+          fields {
+            pageName
+            headline
+            bodyText
+            image {
+              fields {
+                file {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    <Link to="/recipeoverview">Rezept Übersicht</Link>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO title={data.pages.startPage.fields.pageName} />
+
+      <TypoBox
+        imageUrl={data.pages.startPage.fields.image.fields.file.url}
+        headline={data.pages.startPage.fields.headline}
+        bodyText={data.pages.startPage.fields.bodyText}
+      />
+    </Layout>
+  )
+}
 
 export default IndexPage
