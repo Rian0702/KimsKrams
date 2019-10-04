@@ -7,12 +7,11 @@ import "../components/recipe/recipeDetail.scss"
 
 export default function RecipePage({ data }) {
   const recipe = data.contentfulRezept
-  console.log("rezept", recipe)
   return (
     <Layout>
       <div className="recipe-detail-box">
         <div className="recipe-detail-box-head">
-          <div style={{ maxWidth: "500px" }}>
+          <div className="recipe-detail-box-head-left">
             <img
               src={recipe.image.fluid.src}
               className="recipe-detail-box-head-image"

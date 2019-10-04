@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Logo from "./logo/logo"
+import Navigation from "./navigation"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -19,17 +19,7 @@ const Header = ({ siteTitle }) => (
         paddingLeft: "1.45rem",
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `black`,
-            textDecoration: `none`,
-          }}
-        >
-          <Logo></Logo>
-        </Link>
-      </h1>
+      <Navigation></Navigation>
     </div>
   </header>
 )
