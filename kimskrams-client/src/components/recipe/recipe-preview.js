@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes, { Object } from "prop-types"
+import PropTypes from "prop-types"
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 
 import "./recipePreview.scss"

@@ -7,10 +7,11 @@ import RecipeOverview from "../components/recipe/recipe-overview"
 
 const AllRecipes = () => (
   <Layout>
-    <SEO title="Rezept Übersicht" />
-    <h1>Rezept übersicht</h1>
-    <RecipeOverview></RecipeOverview>
-    <Link to="/">Go back to the homepage</Link>
+    <main className="main">
+      <SEO title="Rezept Übersicht" />
+      <h1>Rezept übersicht</h1>
+      <RecipeOverview></RecipeOverview>
+    </main>
   </Layout>
 )
 
