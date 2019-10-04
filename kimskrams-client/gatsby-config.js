@@ -5,26 +5,14 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-lodash`,
     {
-      resolve: "gatsby-source-graphql",
+      resolve: `gatsby-source-contentful`,
       options: {
-        // This type will contain remote schema Query type
-        typeName: "receipt",
-        // This is the field under which it's accessible
-        fieldName: "receipts",
-        // URL to query from
-        url: "http://localhost:8000/graphql",
-      },
-    },
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        // This type will contain remote schema Query type
-        typeName: "page",
-        // This is the field under which it's accessible
-        fieldName: "pages",
-        // URL to query from
-        url: "http://localhost:8000/graphql",
+        spaceId: `bltc5ksbsy0r`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: "6N5GE2YALxcBN3FcQMlqQl3m6o9BvsCiuIiWeL_IhjM",
+        environment: "master",
       },
     },
     "gatsby-plugin-sass",

@@ -21,7 +21,7 @@ const Image = () => {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
           }
-        }
+        } 
       }
     }
   `)
