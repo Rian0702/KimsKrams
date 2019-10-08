@@ -17,6 +17,7 @@ function recipeOverview(props) {
               node_locale
               title
               id
+              slug
               createdAt(locale: "de-DE", formatString: "Do MMMM YYYY")
               introduction {
                 json
@@ -25,6 +26,10 @@ function recipeOverview(props) {
                 fluid(maxHeight: 400) {
                   src
                 }
+              }
+              category {
+                name
+                slug
               }
             }
           }
