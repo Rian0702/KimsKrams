@@ -6,7 +6,7 @@ import RecipePreview from "../components/recipe/recipe-preview"
 export default function RecipePage({ data }) {
   return (
     <Layout>
-      <h1>{data.contentfulKategorie.name}</h1>
+      <h1 className="boxed-headline">{data.contentfulKategorie.name}</h1>
       <div className="recipe-overview">
         {data.allContentfulRezept.nodes.map((rezept, i) => {
           return (

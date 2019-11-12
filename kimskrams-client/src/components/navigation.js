@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
 import Logo from "./logo/logo"
+import BurgerMenu from "./burger-menu"
 
 import "./navigation.scss"
 
@@ -12,11 +13,14 @@ function navigation() {
         style={{
           color: `black`,
           textDecoration: `none`,
+          zIndex: "7",
+          position: "relative",
         }}
       >
         <Logo></Logo>
       </Link>
       <StaticQuery
+        className="desktop-navigation"
         query={graphql`
           query AllCategories {
             allContentfulKategorie {
@@ -31,18 +35,21 @@ function navigation() {
           <>
             {data.allContentfulKategorie.nodes.map((category, i) => {
               return (
-                <Link
-                  className="navigation-link"
-                  to={"/" + category.slug}
-                  key={i}
-                >
-                  {category.name}
-                </Link>
+                <div className="navigation-link-container" key={i}>
+                  <Link
+                    className="navigation-link"
+                    to={"/" + category.slug}
+                    activeClassName="active"
+                  >
+                    {category.name}
+                  </Link>
+                </div>
               )
             })}
           </>
         )}
       />
+      <BurgerMenu className="mobile-navigation"></BurgerMenu>
     </div>
   )
 }

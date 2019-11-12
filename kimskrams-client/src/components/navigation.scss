@@ -1,16 +1,40 @@
+@import "./variables.scss";
 .navigation {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-start: auto;
   column-gap: 30px;
-  a {
-    color: #6c6c6c;
-    text-decoration: none;
-    font-size: 16px;
-    align-self: center;
+  .navigation-link-container {
+    align-content: center;
+    display: flex;
+    a {
+      color: #6c6c6c;
+      text-decoration: none;
+      font-size: 16px;
+      align-self: center;
+      display: inline-block;
+      height: 30px;
+      &.active {
+        border-bottom: 1px solid #9acdce;
+        color: #9acdce;
+      }
+    }
   }
 
   button {
     height: 100%;
+  }
+  @media screen and (max-width: $small) {
+    .navigation-link-container {
+      display: none;
+    }
+    .navigation {
+      overflow-y: hidden;
+    }
+  }
+  @media screen and (min-width: $large) {
+    .navigation-link-container {
+      display: flex;
+    }
   }
 }

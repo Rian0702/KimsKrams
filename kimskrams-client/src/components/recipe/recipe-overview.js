@@ -12,6 +12,7 @@ function recipeOverview(props) {
           allContentfulRezept(
             filter: { node_locale: { eq: "de" } }
             sort: { fields: createdAt, order: DESC }
+            limit: 10
           ) {
             nodes {
               node_locale
@@ -38,11 +39,7 @@ function recipeOverview(props) {
       render={data => (
         <div className="recipe-overview">
           {data.allContentfulRezept.nodes.map((rezept, i) => {
-            return (
-              <>
-                <RecipePreview recipe={rezept} key={i}></RecipePreview>
-              </>
-            )
+            return <RecipePreview recipe={rezept} key={i}></RecipePreview>
           })}
         </div>
       )}

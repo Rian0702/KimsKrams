@@ -7,13 +7,31 @@ $md-secondary-color: $md-purple-a-400; //optional colors
 
 body {
   background-color: #f3e5d7;
+  font-family: "Raleway";
 }
 .main {
-  background-color: rgb(250, 245, 238);
+  // background-color: rgb(250, 245, 238);
   width: 100%;
   padding-left: 1.45rem;
   padding-top: 1.45rem;
   padding-right: 1.45rem;
+}
+
+.boxed-headline {
+  margin-top: 30px;
+  color: #9acdce;
+  background-color: white;
+  padding: 10px;
+  padding-top: 10px;
+  margin-left: 20px;
+  margin-bottom: -20px;
+  z-index: 4;
+  position: relative;
+  margin-right: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 3px 0px 8px 0px;
+  height: 76px;
+  padding-top: 20px;
+  height: auto;
 }
 
 @media screen and (min-width: $large) {

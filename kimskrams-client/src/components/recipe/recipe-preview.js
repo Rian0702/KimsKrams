@@ -6,7 +6,6 @@ import { Link } from "gatsby"
 import "./recipePreview.scss"
 
 function recipePreview({ recipe }) {
-  console.log(JSON.stringify(recipe))
   return (
     <div className="recipe-preview">
       <img src={recipe.image.fluid.src} alt="recipeImage"></img>

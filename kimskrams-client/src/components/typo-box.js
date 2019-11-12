@@ -7,6 +7,8 @@ function typoBox({ headline, bodyText, imageUrl }) {
       className="typo-box-wrapper"
       style={{
         position: "relative",
+        backgroundColor: "#faf5ee",
+        padding: "10px",
       }}
     >
       <div className="typo-box-image">
