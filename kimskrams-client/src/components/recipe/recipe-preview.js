@@ -9,7 +9,7 @@ function recipePreview({ recipe }) {
   console.log(JSON.stringify(recipe))
   return (
     <div className="recipe-preview">
-      <img src={recipe.image.fluid.src}></img>
+      <img src={recipe.image.fluid.src} alt="recipeImage"></img>
       <div className="recipe-preview-box">
         <h2 className="recipe-preview-box-headline">
           <Link

@@ -15,6 +15,7 @@ export default function RecipePage({ data }) {
             <img
               src={recipe.image.fluid.src}
               className="recipe-detail-box-head-image"
+              alt="recipeImage"
             ></img>
             <h1 className="recipe-detail-box-head-title">{recipe.headline}</h1>
           </div>

@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
 import Logo from "./logo/logo"
-import { Button } from "react-md"
 
 import "./navigation.scss"
 
@@ -32,15 +31,13 @@ function navigation() {
           <>
             {data.allContentfulKategorie.nodes.map((category, i) => {
               return (
-                <Button raised>
-                  <Link
-                    className="navigation-link"
-                    to={"/" + category.slug}
-                    key={i}
-                  >
-                    {category.name}
-                  </Link>
-                </Button>
+                <Link
+                  className="navigation-link"
+                  to={"/" + category.slug}
+                  key={i}
+                >
+                  {category.name}
+                </Link>
               )
             })}
           </>

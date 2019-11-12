@@ -10,7 +10,7 @@ function typoBox({ headline, bodyText, imageUrl }) {
       }}
     >
       <div className="typo-box-image">
-        <img src={imageUrl} style={{ maxWidth: "250px" }} />
+        <img src={imageUrl} style={{ maxWidth: "250px" }} alt="kimmi" />
       </div>
       <div
         className="typo-box-text"
