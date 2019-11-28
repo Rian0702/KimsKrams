@@ -22,7 +22,17 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  const footerbg = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "wave.svg" }) {
+        childImageSharp {
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
