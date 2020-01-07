@@ -16,6 +16,9 @@ export default function RecipePage({ data }) {
               src={recipe.image.fluid.src}
               className="recipe-detail-box-head-image"
               alt="recipeImage"
+              style={{
+                backgroundImage: `url("${recipe.image.fluid.tracedSVG}")`,
+              }}
             ></img>
             <h1 className="recipe-detail-box-head-title">{recipe.headline}</h1>
           </div>
@@ -68,6 +71,7 @@ export const query = graphql`
       image {
         fluid(maxHeight: 500) {
           src
+          tracedSVG
         }
       }
       ingredients

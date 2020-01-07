@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.scss"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,21 +23,11 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const footerbg = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "wave.svg" }) {
-        childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="frame">{children}</div>
+      <Footer></Footer>
     </>
   )
 }

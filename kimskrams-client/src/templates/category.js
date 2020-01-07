@@ -9,11 +9,7 @@ export default function RecipePage({ data }) {
       <h1 className="boxed-headline">{data.contentfulKategorie.name}</h1>
       <div className="recipe-overview">
         {data.allContentfulRezept.nodes.map((rezept, i) => {
-          return (
-            <>
-              <RecipePreview recipe={rezept} key={i}></RecipePreview>
-            </>
-          )
+          return <RecipePreview recipe={rezept} key={i}></RecipePreview>
         })}
       </div>
     </Layout>
