@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 
 import "../components/recipe/recipeDetail.scss"
@@ -12,14 +13,11 @@ export default function RecipePage({ data }) {
       <div className="recipe-detail-box">
         <div className="recipe-detail-box-head">
           <div className="recipe-detail-box-head-left">
-            <img
-              src={recipe.image.fluid.src}
+            <Img
+              fluid={recipe.image.fluid}
               className="recipe-detail-box-head-image"
               alt="recipeImage"
-              style={{
-                backgroundImage: `url("${recipe.image.fluid.tracedSVG}")`,
-              }}
-            ></img>
+            ></Img>
             <h1 className="recipe-detail-box-head-title">{recipe.headline}</h1>
           </div>
           <div className="recipe-detail-box-head-content">
@@ -70,8 +68,7 @@ export const query = graphql`
       }
       image {
         fluid(maxHeight: 500) {
-          src
-          tracedSVG
+          ...GatsbyContentfulFluid_withWebp
         }
       }
       ingredients

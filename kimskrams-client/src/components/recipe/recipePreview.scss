@@ -42,8 +42,8 @@
   .recipe {
     &-preview {
       position: relative;
-      img {
-        width: auto;
+      .recipe-image {
+        width: 400px;
       }
 
       &-box {

@@ -28,8 +28,8 @@ export const query = graphql`
           json
         }
         image {
-          fluid(maxHeight: 400) {
-            src
+          fluid(maxHeight: 400, maxWidth: 400) {
+            ...GatsbyContentfulFluid
           }
         }
         category {

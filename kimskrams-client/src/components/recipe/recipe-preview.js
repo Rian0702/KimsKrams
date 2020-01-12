@@ -4,11 +4,19 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import { Link } from "gatsby"
 
 import "./recipePreview.scss"
+import Img from "gatsby-image"
 
 function recipePreview({ recipe }) {
   return (
     <div className="recipe-preview">
-      <img src={recipe.image.fluid.src} alt="recipeImage"></img>
+      <div class="recipe-image">
+        <Img
+          fluid={recipe.image.fluid}
+          alt="recipeImage"
+          class="recipe-image"
+        ></Img>
+      </div>
+
       <div className="recipe-preview-box">
         <h2 className="recipe-preview-box-headline">
           <Link

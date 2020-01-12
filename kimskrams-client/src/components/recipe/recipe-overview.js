@@ -25,7 +25,7 @@ function recipeOverview(props) {
               }
               image {
                 fluid(maxHeight: 400) {
-                  src
+                  ...GatsbyContentfulFluid
                 }
               }
               category {
