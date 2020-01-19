@@ -13,7 +13,7 @@ function recipePreview({ recipe }) {
         <Img
           fluid={recipe.image.fluid}
           alt="recipeImage"
-          class="recipe-image"
+          className="recipe-image"
         ></Img>
       </div>
 

@@ -22,7 +22,8 @@ function typoBox({ headline, bodyText, imageUrl }) {
           top: "15px",
           left: "15%",
           padding: "1rem",
-          boxShadow: "0px 0px 8px 0px rgba(0,0,0,0.4)",
+          boxShadow:
+            "  0 0px 10.8px rgba(0, 0, 0, 0.038),  0 0px 17.7px rgba(0, 0, 0, 0.071),  0 0px 22.4px rgba(0, 0, 0, 0.107),  0 0px 28px rgba(0, 0, 0, 0.152),  0 0px 49px rgba(0, 0, 0, 0.24)",
         }}
       >
         <h3
