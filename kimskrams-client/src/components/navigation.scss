@@ -4,19 +4,21 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-start: auto;
   column-gap: 30px;
+  color: rgb(34, 34, 34);
+  height: 50px;
   .navigation-link-container {
     align-content: center;
     display: flex;
     a {
-      color: #6c6c6c;
+      color: rgb(34, 34, 34);
       text-decoration: none;
       font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       align-self: center;
       display: inline-block;
-      height: 30px;
       &.active {
-        border-bottom: 1px solid #9acdce;
-        color: #9acdce;
+        border-bottom: 1px dotted #ccc;
       }
     }
   }

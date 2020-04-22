@@ -43,6 +43,7 @@ module.exports = {
       options: {
         fonts: [
           `Raleway`, // you can also specify font weights and styles
+          "Unna",
         ],
         display: "swap",
       },

@@ -3,10 +3,13 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import RecipePreview from "../components/recipe/recipe-preview"
 
+import "../components/category.scss"
+
 export default function RecipePage({ data }) {
   return (
     <Layout>
-      <h1 className="boxed-headline">{data.contentfulKategorie.name}</h1>
+      <span className="headline-intro">Schau mal</span>
+      <h1 className="category-headline">{data.contentfulKategorie.name}</h1>
       <div className="recipe-overview">
         {data.allContentfulRezept.nodes.map((rezept, i) => {
           return <RecipePreview recipe={rezept} key={i}></RecipePreview>

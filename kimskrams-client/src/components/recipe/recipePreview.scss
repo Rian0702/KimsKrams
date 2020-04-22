@@ -2,6 +2,8 @@
 .recipe {
   &-preview {
     position: relative;
+    background-color: #ffffff;
+    padding: 35px;
 
     a {
       color: inherit;
@@ -10,6 +12,23 @@
 
     img {
       width: 100%;
+    }
+
+    .read-more-link {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      a {
+        display: flex;
+        padding: 1.3em 2.6em 0.5em;
+        letter-spacing: 0.14em;
+        border: 0;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: 0px;
+        border-bottom: 1px dotted #ccc;
+      }
     }
 
     &-box {
@@ -24,18 +43,24 @@
         0 0px 17.7px rgba(0, 0, 0, 0.071), 0 0px 22.4px rgba(0, 0, 0, 0.107),
         0 0px 28px rgba(0, 0, 0, 0.152), 0 0px 49px rgba(0, 0, 0, 0.24);
       &-headline {
-        margin-bottom: 0px;
+        margin-bottom: 10px;
         font-weight: bold;
-        color: rgb(154, 205, 206);
+        color: black;
+        text-align: center;
+        font-family: "Unna";
+        font-size: 37px;
       }
       &-date {
-        margin-bottom: 10px;
+        margin-bottom: 25px;
         display: block;
-        font-size: 10px;
+        font-size: 14px;
         margin-top: 2px;
+        text-align: center;
       }
       &-introduction {
         font-size: 20px;
+        line-height: 2;
+        margin-top: 20px;
       }
     }
   }
@@ -45,8 +70,6 @@
     &-preview {
       position: relative;
       .recipe-image {
-        width: 400px;
-        border-radius: 15px;
       }
 
       &-box {

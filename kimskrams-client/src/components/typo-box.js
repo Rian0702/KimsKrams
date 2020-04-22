@@ -1,16 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import "./typo-box.scss"
+
 function typoBox({ headline, bodyText, imageUrl }) {
   return (
-    <div
-      className="typo-box-wrapper"
-      style={{
-        position: "relative",
-        backgroundColor: "#faf5ee",
-        padding: "10px",
-      }}
-    >
+    <div className="typo-box-wrapper">
       <div className="typo-box-image">
         <img src={imageUrl} style={{ maxWidth: "250px" }} alt="kimmi" />
       </div>

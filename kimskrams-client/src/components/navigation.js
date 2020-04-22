@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
-import Logo from "./logo/logo"
 import BurgerMenu from "./burger-menu"
 
 import "./navigation.scss"
@@ -17,7 +16,7 @@ function navigation() {
           position: "relative",
         }}
       >
-        <Logo></Logo>
+        <span>Kimskrams</span>
       </Link>
       <StaticQuery
         className="desktop-navigation"
@@ -31,7 +30,7 @@ function navigation() {
             }
           }
         `}
-        render={data => (
+        render={(data) => (
           <>
             {data.allContentfulKategorie.nodes.map((category, i) => {
               return (
